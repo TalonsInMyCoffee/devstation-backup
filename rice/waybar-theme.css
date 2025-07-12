@@ -1,0 +1,306 @@
+{
+    font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", "Fira Code", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid #00ff88;
+    color: #00ff88;
+    transition: all 0.3s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Workspaces */
+#workspaces {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin: 2px 4px;
+    padding: 0 4px;
+    border: 1px solid #00ff88;
+}
+
+#workspaces button {
+    color: #666666;
+    background: transparent;
+    border: none;
+    padding: 4px 8px;
+    margin: 0 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.2);
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+#workspaces button.urgent {
+    color: #ff0066;
+    background: rgba(255, 0, 102, 0.2);
+    border: 1px solid #ff0066;
+    animation: blink 1s linear infinite;
+}
+
+#workspaces button:hover {
+    color: #00ccff;
+    background: rgba(0, 204, 255, 0.1);
+    box-shadow: 0 0 4px rgba(0, 204, 255, 0.3);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.5; }
+}
+
+/* Logo */
+#custom-logo {
+    color: #00ff88;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 4px;
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+/* Window title */
+#window {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 2px 4px;
+    color: #00ccff;
+    font-style: italic;
+}
+
+#window.empty {
+    background: transparent;
+    border: none;
+}
+
+/* Clock */
+#clock {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 2px 4px;
+    color: #00ff88;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+/* System info modules */
+#memory,
+#cpu,
+#temperature,
+#disk {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ccff;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #00ccff;
+    transition: all 0.3s ease;
+}
+
+#memory:hover,
+#cpu:hover,
+#temperature:hover,
+#disk:hover {
+    background: rgba(0, 204, 255, 0.1);
+    box-shadow: 0 0 8px rgba(0, 204, 255, 0.3);
+}
+
+#temperature.critical {
+    color: #ff0066;
+    border-color: #ff0066;
+    background: rgba(255, 0, 102, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Network */
+#network {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #66ff99;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #66ff99;
+}
+
+#network.disconnected {
+    color: #ff6666;
+    border-color: #ff6666;
+    background: rgba(255, 102, 102, 0.1);
+}
+
+/* Bluetooth */
+#bluetooth {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #9966ff;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #9966ff;
+}
+
+#bluetooth.disabled {
+    color: #666666;
+    border-color: #666666;
+}
+
+/* Audio */
+#pulseaudio,
+#pulseaudio.microphone {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ffcc00;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #ffcc00;
+}
+
+#pulseaudio.muted,
+#pulseaudio.microphone.muted {
+    color: #ff6666;
+    border-color: #ff6666;
+    background: rgba(255, 102, 102, 0.1);
+}
+
+/* Battery */
+#battery {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #00ff88;
+}
+
+#battery.charging {
+    color: #66ff99;
+    border-color: #66ff99;
+    background: rgba(102, 255, 153, 0.1);
+}
+
+#battery.warning {
+    color: #ffcc00;
+    border-color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+}
+
+#battery.critical {
+    color: #ff0066;
+    border-color: #ff0066;
+    background: rgba(255, 0, 102, 0.1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Power profile */
+#custom-power_profile {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff9900;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #ff9900;
+}
+
+/* Tray */
+#tray {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(255, 0, 102, 0.2);
+}
+
+/* Custom buttons */
+#custom-lock,
+#custom-power {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff0066;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px 2px;
+    color: #ff0066;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#custom-lock:hover,
+#custom-power:hover {
+    background: rgba(255, 0, 102, 0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 102, 0.5);
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    color: #00ff88;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 11px;
+    padding: 8px 12px;
+}
+
+tooltip label {
+    color: #00ff88;
+}
+
+/* Scrollbar styling for tooltip calendar */
+.scrollbar {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.scrollbar:hover {
+    background: rgba(0, 255, 136, 0.3);
+}
+
+/* Calendar styling */
+calendar {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    color: #00ff88;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 10px;
+    padding: 4px;
+}
+
+calendar:selected {
+    background: rgba(0, 255, 136, 0.2);
+    border-radius: 4px;
+}
